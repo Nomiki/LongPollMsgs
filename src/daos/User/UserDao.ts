@@ -29,7 +29,7 @@ export class UserDao implements IUserDao {
    * Adds a user to the DB
    * @param obj user to add
    */
-  public async add(obj: IUser): Promise<void> {
+  public async add(obj: IUser): Promise<IUser> {
     // TODO
 
     return {} as any;
@@ -39,7 +39,7 @@ export class UserDao implements IUserDao {
    * Updates a user
    * @param obj user to update
    */
-  public async update(obj: IUser): Promise<void> {
+  public async update(obj: IUser): Promise<IUser> {
     // TODO
 
     return {} as any;

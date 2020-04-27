@@ -1,10 +1,12 @@
 import { IDao } from "../IDao";
 import { IMessage } from "../../entities/Message";
+import { MessageStatus } from "../../entities/MessageStatus";
 
-export interface IMessageDao extends IDao<IMessage> {}
+export interface IMessageDao extends IDao<IMessage> {
+  getOfUser: (user: string, status?: MessageStatus) => Promise<IMessage[]>;
+}
 
 export class MessageDao implements IMessageDao {
-
   /**
    * Returns a message that corresponds the given ID or null.
    * @param key message ID
@@ -27,10 +29,21 @@ export class MessageDao implements IMessageDao {
   }
 
   /**
+   * Returns user's @user messages.
+   * @param user user name messages.
+   * @param status (optional) message status.
+   */
+  public async getOfUser(user: string, status?: MessageStatus): Promise<IMessage[]> {
+    // TODO
+
+    return {} as any;
+  }
+
+  /**
    * Adds a message to the DB
    * @param obj Message to add
    */
-  public async add(obj: IMessage): Promise<void> {
+  public async add(obj: IMessage): Promise<IMessage> {
     // TODO
 
     return {} as any;
@@ -40,7 +53,7 @@ export class MessageDao implements IMessageDao {
    * Updates a message
    * @param obj Message to update
    */
-  public async update(obj: IMessage): Promise<void> {
+  public async update(obj: IMessage): Promise<IMessage> {
     // TODO
 
     return {} as any;
