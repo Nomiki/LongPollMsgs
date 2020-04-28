@@ -5,13 +5,45 @@
       "from": "Yakov",
       "to": "Moshe",
       "message": "Hi Moshe!",
-      "status": "New"
+      "status": "Sent"
+    },
+    {
+      "id": "b6014fb7-156d-4bd6-8be6-d9a7c852a606",
+      "from": "Yakov",
+      "to": "Moshe",
+      "message": "Hi!",
+      "status": "Sent"
+    },
+    {
+      "id": "4bb5796b-a7ab-4232-a723-61ce32dbaa7b",
+      "from": "Moshe",
+      "to": "Yakov",
+      "message": "Hey you!",
+      "status": "Sent"
+    },
+    {
+      "id": "eac9b060-7017-4f9c-adfc-3656cf833cd9",
+      "from": "Moshe",
+      "to": "Yakov",
+      "message": "Hey you! 2",
+      "status": "Sent"
+    },
+    {
+      "id": "ecb0db33-3a53-4baf-95ff-5aa1396ac1f7",
+      "from": "Moshe",
+      "to": "Yakov",
+      "message": "Hey you! 3",
+      "status": "Sent"
     }
   ],
   "users": [
     {
       "name": "Yakov",
-      "pollTimeoutSeconds": 10
+      "pollTimeoutSeconds": 60
+    },
+    {
+      "name": "Moshe",
+      "pollTimeoutSeconds": 5
     }
   ]
 }
