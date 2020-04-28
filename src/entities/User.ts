@@ -9,6 +9,6 @@ export class User implements IUser {
 
   constructor(iUser: IUser) {
     this.name = iUser.name;
-    this.pollTimeoutSeconds = iUser.pollTimeoutSeconds;
+    this.pollTimeoutSeconds = iUser.pollTimeoutSeconds || 20;
   }
 }

@@ -1,6 +1,6 @@
 import jsonfile from "jsonfile";
 
-export class MockDaoBase {
+export class MockDbBase {
   private readonly dbFilePath = "src/daos/MockDb/MockDb.json";
 
   protected openDb(): Promise<any> {
@@ -8,6 +8,6 @@ export class MockDaoBase {
   }
 
   protected saveDb(db: any): Promise<any> {
-    return jsonfile.writeFile(this.dbFilePath, db);
+    return jsonfile.writeFile(this.dbFilePath, db, { spaces: 2, EOL: "\r\n" });
   }
 }

@@ -1,12 +1,10 @@
-import { IDao } from "../IDao";
 import { IMessage, Message } from "../../entities/Message";
-import { MockDaoBase } from "../MockDb/MockDaoBase";
+import { MockDbBase } from "../MockDb/MockDbBase";
 import { CommonFunctions } from "../../shared/functions";
 import { MessageStatus } from "../../entities/MessageStatus";
+import { IMessageDao } from "./MessageDao";
 
-export interface IMessageDao extends IDao<IMessage> {}
-
-export class MessageDao extends MockDaoBase implements IMessageDao {
+export class MessageDao extends MockDbBase implements IMessageDao {
   /**
    * Returns a message that corresponds the given ID or null.
    * @param key message ID
@@ -19,6 +17,7 @@ export class MessageDao extends MockDaoBase implements IMessageDao {
           return message;
         }
       }
+
       return null;
     } catch (err) {
       throw err;

@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 import { OK, BAD_REQUEST, CREATED, NOT_FOUND } from "http-status-codes";
 import { MessageDao } from "../daos/Message/MessageDao.mock";
+import { MessageStatus } from "../entities/MessageStatus";
 
 const router = Router();
 const messageDao = new MessageDao();
@@ -22,7 +23,7 @@ const messageDao = new MessageDao();
  * @route GET /messages/{id}
  * @group Messages
  * @param {string} id.path.required - the message ID
- * @returns {object} 200 - the message json
+ * @returns {Message} 200 - the message json
  * @returns {Error} 404 - message with @id wasn't found
  * @returns {Error}  default - Unexpected error
  */
