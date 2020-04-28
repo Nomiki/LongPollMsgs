@@ -6,6 +6,8 @@ import { EventEmitter } from "events";
 import { MessageStatus } from "../entities/MessageStatus";
 import Stopwatch from "statman-stopwatch";
 
+const DEFAULT_TIMEOUT = 20;
+
 const router = Router();
 const messageDao = new MessageDao();
 const userDao = new UserDao();
@@ -49,8 +51,8 @@ router.get("/:id", async (req: Request, res: Response) => {
  * @route POST /messages
  * @group Messages
  * @param {Message.model} body.body.required
- * @returns {Message} 204 - Created message
- * @returns {Error} 400 - Missing body
+ * @returns {Message} 201 - Created message
+ * @returns {Error} 400 - Missing body or parameters
  */
 router.post("/", async (req: Request, res: Response) => {
   const message = req.body;
@@ -92,7 +94,7 @@ router.get("/new/:ofUser", async (req: Request, res: Response) => {
   const stopwatch = new Stopwatch(true);
   const username = req.params.ofUser;
   const user = await userDao.getOne(username);
-  const pollTimeoutSeconds = user ? user.pollTimeoutSeconds : 20;
+  const pollTimeoutSeconds = user ? user.pollTimeoutSeconds : DEFAULT_TIMEOUT;
   const messages = await getAndMarkNewMessages(username);
 
   if (messages.length > 0) {

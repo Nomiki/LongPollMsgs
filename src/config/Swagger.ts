@@ -5,8 +5,8 @@ export class Swagger {
     const options = {
       swaggerDefinition: {
         info: {
-          description: "This is a sample server",
-          title: "Swagger",
+          description: "Long Polling Messages Example",
+          title: "LongPollMsgs",
           version: "1.0.0",
         },
         host: "localhost:8080",
@@ -14,8 +14,8 @@ export class Swagger {
         produces: ["application/json"],
         schemes: ["http"],
       },
-      basedir: ".", // app absolute path
-      files: ["./**/routes/**/*.js", "./**/routes/**/*.ts"], // Path to the API handle folder
+      basedir: ".",
+      files: ["./**/routes/**/*.js"],
     };
 
     expressSwagger(app)(options);

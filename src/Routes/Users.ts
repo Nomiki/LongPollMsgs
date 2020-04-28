@@ -38,7 +38,7 @@ router.get("/:name", async (req: Request, res: Response) => {
  * @param {string} name.path.required - the user name
  * @param {number} timeoutSeconds.path.required - the desired timeout
  * @returns {User} 200 - the updated user json
- * @returns {User} 204 - if a new user detected, the created user
+ * @returns {User} 201 - if a new user detected, the created user
  * @returns {Error} default - Unexpected error
  */
 router.put("/:name/pollTimeout/:timeoutSeconds", async (req: Request, res: Response) => {
